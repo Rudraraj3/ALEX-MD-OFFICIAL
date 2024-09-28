@@ -60,7 +60,7 @@ const MAIN_MSG = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷- 」*
 > ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★`;
 
 // Download Menu
-const DOWNLOAD_MSG = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
+const DL_MSG = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
 *╰────────────┈*
 ╭══════════════◈
 ┃「  𝐷𝑂𝑊𝑁𝐿𝑂𝐴𝐷 𝑀𝐸𝑁𝑈 」
@@ -338,7 +338,7 @@ const GROUP_MSG = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
 > ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★`;
 
 //Bug Menu
-const BUGMENU_MSG = `*╭─「 𝐴𝐿𝐸𝑋-𝑀𝐷 」*
+const BG_MSG = `*╭─「 𝐴𝐿𝐸𝑋-𝑀𝐷 」*
 *╰────────────┈*
 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐝𝐚𝐫𝐤 𝐡𝐚𝐜𝐤𝐞𝐫 𝐳𝐨𝐧𝐞
 𝐭𝐞𝐚𝐦𝐞 𝐥𝐞𝐚𝐝𝐞𝐫 𝐚𝐥𝐞𝐱-𝐢𝐝
@@ -424,6 +424,26 @@ const OWNER_MSG = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
     *⏤͟͟͞͞★❬❬ 𝑈𝑃𝐷𝐴𝑇𝐸𝑆 ❭❭⏤͟͟͞͞★*
  
 > ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★`;
+
+// Ehi Menu
+const EM_MSG `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
+*╰────────────┈*
+╭══════════════◈
+┃「  𝐸𝐻𝐼 𝑀𝐸𝑁𝑈 」
+╰══════════════◈
+*╭────────────┈◦•◦❥•*
+*╎➮ . 𝐸𝒉𝑖*
+*╎➮ . 𝑉2𝑟𝑎𝑦*
+*╎➮ . 𝐷𝑖𝑎𝑙𝑜𝑔*
+*╎➮ . 𝐻𝑢𝑡𝑐𝒉*
+*╎➮ . 𝑀𝑜𝑏𝑖𝑡𝑒𝑙*
+*╎➮ . 𝑃𝑎𝑖𝑑𝐸𝒉𝑖*
+*╚──────────────┈┈*
+*╭─ 「  𝑴𝒓 𝑨𝒍𝒆𝒙 𝑰𝒅  」*
+*╰───────────────┈*
+       *⏤͟͟͞͞★❬❬ 𝑈𝑃𝐷𝐴𝑇𝐸𝑆 ❭❭⏤͟͟͞͞★*
+
+> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★`;
 //=============================================================================================================================
 cmd({
     pattern: "menu",
@@ -465,9 +485,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                 },
                 externalAdReply: {
                     title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-                    body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃​',
+                    body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★​',
                     thumbnailUrl: thumbnailUrl, // Use the URL directly here
-                    sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+                    sourceUrl: 'https://alex-id-programmer.vercel.app/',
                     mediaType: 1,
                     renderLargerThumbnail: true
                 }
@@ -517,9 +537,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -563,9 +583,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃​',
-          thumbnailUrl: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★​',
+          thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -610,9 +630,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -657,9 +677,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -704,9 +724,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃​',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★​',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -751,9 +771,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃​',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -798,9 +818,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃​',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★​',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -846,9 +866,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -894,9 +914,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃​',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★​',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -940,9 +960,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -986,9 +1006,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -1033,9 +1053,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -1079,9 +1099,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃​',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -1125,9 +1145,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃​',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -1171,9 +1191,9 @@ return await conn.sendMessage(from, {
         },
         externalAdReply: {
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-          body: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
+          body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
