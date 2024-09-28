@@ -1567,17 +1567,24 @@ cmd({
             return await conn.sendMessage(from, { react: { text: "⚠️", key: mek.key } });
         }
 
-        const captionHeader = `
-╭─『 *𝗔𝗟𝗘𝗫-𝗠𝗗* 』───⊷
-│
+        const captionHeader = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
+*╰────────────┈*
+╭══════════════◈
+┃「  𝐷𝑂𝑊𝑁𝐿𝑂𝐴𝐷 𝐺𝐷𝑅𝐼𝑉𝐸」
+╰══════════════◈
+*╭────────────┈◦•◦❥•*
 │ ✨ *ʀᴇQᴜᴇꜱᴛᴇʀ*: ${pushname}
 │ 🤖 *ʙᴏᴛ*: 𝗔𝗟𝗘𝗫-𝗠𝗗
 │ 📄 *ꜰɪʟᴇ ɴᴀᴍᴇ:* ${fileInfo.fileName || fileInfo.title || 'Not available'}
 │ 📦 *ꜱɪᴢᴇ:* ${formatFileSize(fileSize)}
 │ 📎 *ᴛʏᴘᴇ:* ${fileInfo.mimeType || fileInfo.file_type || 'Not available'}
 │
-│ 🤷‍♀️ _Your Google Drive content is on its way!_
-╰────────────────────⊷`.trim();
+*╚──────────────┈┈*
+*╭─ 「  𝑴𝒓 𝑨𝒍𝒆𝒙 𝑰𝒅  」*
+*╰───────────────┈*
+       *⏤͟͟͞͞★❬❬ 𝑈𝑃𝐷𝐴𝑇𝐸𝑆 ❭❭⏤͟͟͞͞★*
+
+> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★`.trim();
 
         const caption = `${captionHeader}\n\n${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}`.trim();
 
@@ -1626,14 +1633,19 @@ cmd({
         if (!q) return await reply('*🚫 Please provide a TikTok URL! 🚫*');
 
         // Watermark message
-        let wm = `
-╭─『 *𝗔𝗟𝗘𝗫-𝗠𝗗* 』───⊷
-│
-│ ✨ *ʀᴇQᴜᴇꜱᴛᴇʀ*: ${pushname || "User"}
-│ 🤖 *ʙᴏᴛ*: 𝗔𝗟𝗘𝗫-𝗠𝗗
-│  
-│ 🤷‍♀️ _We Will Send Your TikTok Video And Audio, Without Watermark and best quality_
-╰────────────────────⊷
+        let wm = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
+*╰────────────┈*
+╭══════════════◈
+┃「  𝐷𝑂𝑊𝑁𝐿𝑂𝐴𝐷 𝐹𝐵」
+╰══════════════◈
+*╭────────────┈◦•◦❥•*
+*╎➮ . 🥷 𝑅𝑒𝑞𝑢𝑒𝑠𝑡𝑒𝑟 : ${pushname}*
+*╎*
+*╎➮ . 𝐵𝑂𝑇 - 𝐴𝐿𝐸𝑋-𝑀𝐷*
+*╚──────────────┈┈*
+*╭─ 「  𝑴𝒓 𝑨𝒍𝒆𝒙 𝑰𝒅  」*
+*╰───────────────┈*
+       *⏤͟͟͞͞★❬❬ 𝑈𝑃𝐷𝐴𝑇𝐸𝑆 ❭❭⏤͟͟͞͞★*
 
 > ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★`;
 
@@ -2686,7 +2698,7 @@ cmd({
 
             await conn.sendMessage(from, {
       document: { url: pdfUrl }, // Path to your PDF file
-      fileName: 'A L E X  M D', // Filename for the document
+      fileName: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃', // Filename for the document
       mimetype: "application/pdf",
       fileLength: 99999999999999,
       image: { url: 'https://i.ibb.co/5rm6dLz/image.png' },
@@ -2704,14 +2716,14 @@ ${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterName: 'A L E X  M D​',
+          newsletterName: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
           newsletterJid: "120363333519565664@newsletter",
         },
         externalAdReply: {
-          title: 'A L E X  M D',
+          title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
           body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: 'https://bhashi-md-ofc.netlify.app/',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -2782,7 +2794,7 @@ cmd({
           title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
           body: ' ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
           thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
-          sourceUrl: 'alex-id-programmer.vercel.app/',
+          sourceUrl: 'https://alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
