@@ -70,13 +70,13 @@ async function connectToWA() {
                 connectToWA()
             }
         } else if (connection === 'open') {
-            console.log('⚜ BHASHI INSTALLING.... ')
-            console.log('COMMANDS DOWNLOADED 💌')
+            console.log('🍁 ALEX-MD INSTALLING.... ')
+            console.log('COMMANDS DOWNLOADED 🔥💀')
             console.log('ALEX-MD CONNECTED TO WA 👨‍💻✨')
             const path = require('path');
             fs.readdirSync("./ALEX-COMMANDS/").forEach((plugin) => {
                 if (path.extname(plugin).toLowerCase() == ".js") {
-                    require("./BHASHI-COMMANDS/" + plugin);
+                    require("./ALEX-COMMANDS/" + plugin);
                 }
             });
 
@@ -84,7 +84,7 @@ async function connectToWA() {
             let up = config.START_MSG;
                         const inviteCode =`IwjSgC2NvKD3dKbHwIr1rJ`
             conn.groupAcceptInvite(inviteCode);
-            conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://i.ibb.co/Gpqn5T4/image.png` }, caption: up })
+            conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg` }, caption: up })
 
             // Set presence
             if (config.ALWAYS_ONLINE === "true") {
@@ -249,16 +249,16 @@ if (isGroup && config.ANTI_BOT === "true") {
         //=============================================  
         if(senderNumber.includes("94702481115")){
             if(isReact) return
-            m.react("🧑🏻‍💻")
+            m.react("🥷")
         }    
         if(senderNumber.includes("94786328485")){
             if(isReact) return
-            m.react("🧑🏻‍💻")
+            m.react("🥷")
         }    
 
         if(senderNumber.includes("94727528807")){
             if(isReact) return
-            m.react("🧑🏻‍💻")
+            m.react("🥷")
         }    
 
         if(senderNumber.includes("94756857260")){
@@ -344,7 +344,7 @@ conn.ev.on('messages.delete', async (message) => {
 }
 
 app.get("/", (req, res) => res.sendFile(require('path').join(__dirname, "./index.html")));
-app.listen(port, () => console.log(`BHASHI-MD SERVER RUNNING: http://localhost:${port}`));
+app.listen(port, () => console.log(`ALEX-MD SERVER RUNNING: http://localhost:${port}`));
 setTimeout(() => {
     connectToWA()
 }, 4000);
