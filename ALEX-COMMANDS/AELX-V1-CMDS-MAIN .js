@@ -1410,13 +1410,20 @@ cmd({
     try {
         if (!q) return await reply('*🚫 Please provide a Facebook URL! 🚫*');
 
-        const introMessage = `╭─『 *𝗔𝗟𝗘𝗫-𝗠𝗗* 』───⊷
-│
-│ ✨ *ʀᴇQᴜᴇꜱᴛᴇʀ*: ${pushname}
-│ 🤖 *ʙᴏᴛ*: 𝗔𝗟𝗘𝗫-MD
-│
-│ 🤷‍♀️ *We Will Send Your Facebook Video And Audio Without Watermark and in Best Quality*
-╰────────────────────⊷
+        const introMessage = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
+*╰────────────┈*
+╭══════════════◈
+┃「  𝐷𝑂𝑊𝑁𝐿𝑂𝐴𝐷 𝐹𝐵」
+╰══════════════◈
+*╭────────────┈◦•◦❥•*
+*╎➮ . 🥷 𝑅𝑒𝑞𝑢𝑒𝑠𝑡𝑒𝑟 : ${pushname}*
+*╎*
+*╎➮ . 𝐵𝑂𝑇 - 𝐴𝐿𝐸𝑋-𝑀𝐷*
+*╚──────────────┈┈*
+*╭─ 「  𝑴𝒓 𝑨𝒍𝒆𝒙 𝑰𝒅  」*
+*╰───────────────┈*
+       *⏤͟͟͞͞★❬❬ 𝑈𝑃𝐷𝐴𝑇𝐸𝑆 ❭❭⏤͟͟͞͞★*
+
 > ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★`;
 
  
