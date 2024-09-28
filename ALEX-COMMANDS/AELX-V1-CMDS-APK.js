@@ -4,9 +4,161 @@ const { cmd, commands } = require('../command');
 const config = require('../config');
 const axios = require('axios');
 const fs = require('fs');
-const checkAccess = require('../DATABASE/accessControl'); 
+const { checkAccess, isPremiumUser, blacklistedJIDs, premiumJIDs, dataLoaded } = require('../DATABASE/accessControl');
 
 
+
+
+cmd({
+    pattern: 'ssave',
+    desc: 'Saves media from a status or message to your device.',
+    category: 'media',
+    react: '💾',
+    filename: __filename
+}, async (conn, mek, m, { from, reply, args }) => {
+    try {
+        const senderNumber = m.sender;
+        const isGroup = m.isGroup || false;
+
+        // Check access permissions
+        if (!checkAccess(senderNumber, isGroup)) {
+            if (blacklistedJIDs.includes(senderNumber)) {
+                return reply("*🚫 You are blacklisted. Access denied.*");
+            } else {
+                return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode!*");
+            }
+        }
+
+        // Check if a message is quoted
+        if (!m.quoted) {
+            return reply("Please reply to a status or message with media that you want to save.");
+        }
+
+        // Get the quoted message
+        const quotedMsg = m.quoted;
+
+        // Check for different types of media
+        const mediaType = quotedMsg.type || quotedMsg.mtype;
+        let mediaData;
+        let fileExtension = '';
+        let mimeType = '';
+
+        switch (mediaType) {
+            case 'imageMessage':
+                mediaData = await quotedMsg.download() || await conn.downloadMediaMessage(quotedMsg);
+                fileExtension = 'jpg';
+                mimeType = 'image/jpeg';
+                break;
+            case 'videoMessage':
+                mediaData = await quotedMsg.download() || await conn.downloadMediaMessage(quotedMsg);
+                fileExtension = 'mp4';
+                mimeType = 'video/mp4';
+                break;
+            case 'audioMessage':
+                mediaData = await quotedMsg.download() || await conn.downloadMediaMessage(quotedMsg);
+                fileExtension = 'ogg';
+                mimeType = 'audio/ogg';
+                break;
+            case 'documentMessage':
+                mediaData = await quotedMsg.download() || await conn.downloadMediaMessage(quotedMsg);
+                fileExtension = quotedMsg.fileName ? quotedMsg.fileName.split('.').pop() : 'bin';
+                mimeType = quotedMsg.mimetype || 'application/octet-stream';
+                break;
+            default:
+                return reply("The replied message does not contain supported media. Please reply to an image, video, audio, or document.");
+        }
+
+        if (!mediaData) {
+            return reply("Failed to download the media.");
+        }
+
+        // Ensure media directory exists
+        const mediaDir = path.join(__dirname, 'media');
+        if (!fs.existsSync(mediaDir)) {
+            fs.mkdirSync(mediaDir);
+        }
+
+        // Generate a unique filename
+        const filename = `ʙʜᴀꜱʜɪ-ᴍᴅ | ${Date.now()}.${fileExtension}`;
+
+        // Save the media to a file
+        const filePath = path.join(mediaDir, filename);
+        fs.writeFileSync(filePath, mediaData);
+
+        // Send the saved file back to the user
+        await conn.sendMessage(from, { document: fs.readFileSync(filePath), mimetype: mimeType, fileName: filename }, { quoted: m });
+
+        reply(`*✅ Status Saved* ${filename}\n\nʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛$`);
+        console.log('Media saved successfully');
+    } catch (e) {
+        console.error('Error executing media saver command:', e);
+        reply('⚠️ An error occurred while saving the media.');
+    }
+});
+
+
+cmd({
+    pattern: "rvideo",
+    alias: ["randomvideo"],
+    desc: "Fetch and send a random video from Pexels.",
+    category: "fun",
+    react: "🎥",
+    filename: __filename
+}, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+    try {
+           const senderNumber = m.sender;
+        const isGroup = m.isGroup || false;
+
+        // Check access permissions
+        if (!checkAccess(senderNumber, isGroup)) {
+            if (blacklistedJIDs.includes(senderNumber)) {
+                return reply("*🚫 You are blacklisted. Access denied.*");
+            } else {
+                return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode!*");
+            }
+        }
+
+        // Notify the user that the video is being downloaded
+        await conn.sendMessage(from, { text: '⏳ *Please wait, your video is downloading...* ⏳' }, { quoted: mek });
+
+        // Pexels API request to fetch a random video
+        const apiUrl = `https://api.pexels.com/videos/search?query=random&per_page=1&page=${Math.floor(Math.random() * 100) + 1}`;
+        const response = await axios.get(apiUrl, { headers: { Authorization: config.PEXELS_API_KEY } });
+
+        // Check if video data exists
+        const video = response.data.videos[0];
+        if (!video || !video.video_files || video.video_files.length === 0) {
+            return reply("❌ No video files found.");
+        }
+
+        // Get the video file link
+        const videoUrl = video.video_files[0].link;
+        const videoTitle = video.title || 'Random Video';
+
+        // Download the video
+        const videoPath = path.join(__dirname, 'tempVideo.mp4'); // Temporary path for the video
+        const writer = fs.createWriteStream(videoPath);
+
+        const responseVideo = await axios.get(videoUrl, { responseType: 'stream' });
+        responseVideo.data.pipe(writer);
+
+        // Await the completion of file download
+        await new Promise((resolve, reject) => {
+            writer.on('finish', resolve); // Resolve when writing finishes
+            writer.on('error', reject); // Reject if an error occurs
+        });
+
+        // Notify the user and send the video after download
+        await conn.sendMessage(from, { video: { url: videoPath }, caption: `🎥 *Random Pexels Video* 🎥\n\nTitle: ${videoTitle}\n\n> ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ ㋛` }, { quoted: mek });
+
+        // Clean up the downloaded video file
+        fs.unlinkSync(videoPath);
+
+    } catch (e) {
+        console.log(e);
+        reply(`❌ Error: ${e.message}`);
+    }
+});
 
 //======================================================================================================================
 cmd({
@@ -20,9 +172,13 @@ cmd({
         const senderNumber = m.sender;
         const isGroup = m.isGroup || false;
 
-        // Check if the sender has access (implement checkAccess function accordingly)
+        // Check access permissions
         if (!checkAccess(senderNumber, isGroup)) {
-            return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode !*");
+            if (blacklistedJIDs.includes(senderNumber)) {
+                return reply("*🚫 You are blacklisted. Access denied.*");
+            } else {
+                return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode!*");
+            }
         }
 
         // Check if the search query is provided
@@ -75,9 +231,13 @@ cmd({
         const senderNumber = m.sender;
         const isGroup = m.isGroup || false;
 
-        // Check if the sender has access (implement checkAccess function accordingly)
+        // Check access permissions
         if (!checkAccess(senderNumber, isGroup)) {
-            return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode !*");
+            if (blacklistedJIDs.includes(senderNumber)) {
+                return reply("*🚫 You are blacklisted. Access denied.*");
+            } else {
+                return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode!*");
+            }
         }
 
         // Check if the XNXX video URL is provided
@@ -91,9 +251,9 @@ cmd({
         let result = response.data;
 
         // Check if the API response contains data
-        if (result && result.data) {
-            const video = result.data; // Assuming 'data' contains the details
-            
+        if (result && result.status && result.data) {
+            const video = result.data; // Accessing video data
+
             let desc = `🎬 *TITLE*: ${video.title}
 > 👁️ *Views*: ${video.views}
 > 📺 *Quality*: ${video.quality}
@@ -103,9 +263,15 @@ cmd({
             // Send the video details
             await conn.sendMessage(from, { text: desc }, { quoted: mek });
 
-            // Now download and send the video
-            const videoUrl = video.url; // Assuming 'url' contains the direct video URL
-            await conn.sendMessage(from, { video: { url: videoUrl }, caption: `🎬 *${video.title}*` }, { quoted: mek });
+            // Check if high quality download link is available
+            const downloadUrl = video.download.high; // Use high-quality download link
+
+            // Send the video
+            await conn.sendMessage(from, {
+                video: { url: downloadUrl },
+                caption: `🎬 *${video.title}*`,
+                mimetype: 'video/mp4' // Specify the correct MIME type
+            }, { quoted: mek });
         } else {
             // If the API response fails, send an error message
             return reply("❌ Failed to fetch the video details. Please check the URL and try again!");
@@ -115,7 +281,6 @@ cmd({
         reply(`❗ An error occurred: ${e.message}`);
     }
 });
-
 //======================================================================================================================
 
 cmd({
@@ -127,6 +292,17 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, isCmd, command, isGroup, sender, senderNumber, reply }) => {
     try {
+                const senderNumber = m.sender;
+        const isGroup = m.isGroup || false;
+
+        // Check access permissions
+        if (!checkAccess(senderNumber, isGroup)) {
+            if (blacklistedJIDs.includes(senderNumber)) {
+                return reply("*🚫 You are blacklisted. Access denied.*");
+            } else {
+                return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode!*");
+            }
+        }
         const response = await axios.get('https://deliriusapi-official.vercel.app/tools/wabetainfo');
         const betaInfo = response.data.data;
 
@@ -164,9 +340,13 @@ cmd({
         const senderNumber = m.sender;
         const isGroup = m.isGroup || false;
 
-        // Check if the sender has access (implement checkAccess function accordingly)
+        // Check access permissions
         if (!checkAccess(senderNumber, isGroup)) {
-            return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode !*");
+            if (blacklistedJIDs.includes(senderNumber)) {
+                return reply("*🚫 You are blacklisted. Access denied.*");
+            } else {
+                return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode!*");
+            }
         }
 
         // Check if the TikTok username is provided
@@ -227,7 +407,7 @@ cmd({
 });
 
 //======================================================================================================================
-cmd({
+/*cmd({
     pattern: "srepo2",
     desc: "Stalk GitHub repository.",
     react: "🐱‍💻",
@@ -238,9 +418,13 @@ cmd({
         const senderNumber = m.sender;
         const isGroup = m.isGroup || false;
 
-        // Check if the sender has access (implement checkAccess function accordingly)
+        // Check access permissions
         if (!checkAccess(senderNumber, isGroup)) {
-            return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode !*");
+            if (blacklistedJIDs.includes(senderNumber)) {
+                return reply("*🚫 You are blacklisted. Access denied.*");
+            } else {
+                return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode!*");
+            }
         }
 
         // Check if the GitHub repository URL is provided
@@ -297,7 +481,7 @@ cmd({
     }
 });
 
-
+*/
 //=====================================================================================================================
 
 cmd({
@@ -311,11 +495,14 @@ cmd({
         const senderNumber = m.sender;
         const isGroup = m.isGroup || false;
 
-        // Check if the sender has access (implement checkAccess function accordingly)
+        // Check access permissions
         if (!checkAccess(senderNumber, isGroup)) {
-            return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode !*");
+            if (blacklistedJIDs.includes(senderNumber)) {
+                return reply("*🚫 You are blacklisted. Access denied.*");
+            } else {
+                return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode!*");
+            }
         }
-
         // Check if the Instagram URL is provided
         if (!q) return reply("🪄 Please provide an Instagram reel URL ✨");
 
@@ -377,6 +564,17 @@ cmd({
 },
 async (conn, mek, m, { from, reply, q, pushname }) => {
     try {
+                const senderNumber = m.sender;
+        const isGroup = m.isGroup || false;
+
+        // Check access permissions
+        if (!checkAccess(senderNumber, isGroup)) {
+            if (blacklistedJIDs.includes(senderNumber)) {
+                return reply("*🚫 You are blacklisted. Access denied.*");
+            } else {
+                return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode!*");
+            }
+        }
  
         if (!q) {
             return reply("Please provide a package name to search for. Example: `.apk com.whatsapp`");
@@ -400,17 +598,12 @@ async (conn, mek, m, { from, reply, q, pushname }) => {
 
         await conn.sendMessage(from, {
             image: { url: apkIcon },
-            caption: `╭─『 *ᴀᴘᴋ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ* 』───⊷
-│
-│ ✨ *ʀᴇQᴜᴇꜱᴛᴇʀ*: ${pushname}
-│ 🤖 *ʙᴏᴛ*: BHASHI-MD
-│ 🎁 *ꜱɪᴢᴇ :* ${apkSize} MB
-│ 🎨 *ʟᴀᴛᴇꜱᴛ ᴜᴘᴅᴀᴛᴇ* : ${apkLastUpdate} 
-│ ✨ *ꜰɪʟᴇ ɴᴀᴍᴇ :* ${apkName}
-│ 🎊 *ᴘᴀᴄᴋᴀɢᴇ :* ${apkPackage} 
-│
-│ 🤷‍♀️ *We Will Send Your Apk File Latest Update*
-╰────────────────────⊷`,
+            caption: `乂  𝖡 𝖧 𝖠 𝖲 𝖧 𝖨  𝖠 𝖯 𝖪  𝖣 𝖫
+
+‎  *📥 𝖠𝗉𝗄 𝖭𝖺𝗆𝖾 :* ${apkName}
+‎  *🛍️ 𝖯𝖺𝖼𝗄𝖺𝗀𝖾 :* ${apkPackage} 
+‎  *📆 𝖫𝖺𝗌𝗍 𝖴𝗉𝖽𝖺𝗍𝖾 :* ${apkLastUpdate} 
+‎  *⚙️ 𝖲𝗂𝗓𝖾 :* ${apkSize} MB`,
             footer: 'ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛'
         }, { quoted: mek });
 
