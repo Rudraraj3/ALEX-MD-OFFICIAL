@@ -27,7 +27,6 @@ const MENU_MSG = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
 *╎➮ 13 𝐵𝑢𝑔 𝑀𝑒𝑛𝑢*
 *╎➮ 14 𝑂𝑤𝑛𝑒𝑟 𝑀𝑒𝑛𝑢*
 *╎➮ 15 𝐸𝒉𝑖 𝑀𝑒𝑛𝑢*
-*╎➮ 16 𝑃𝑟𝑒𝑚𝑖𝑢𝑚 𝑀𝑒𝑛𝑢*
 *╚──────────────┈┈*
 *╭─ 「  𝑴𝒓 𝑨𝒍𝒆𝒙 𝑰𝒅  」*
 *╰───────────────┈*
@@ -950,7 +949,7 @@ return await conn.sendMessage(from, {
       mimetype: "application/pdf",
       fileLength: 99999999999999,
       pageCount: 2024,
-      caption: MOVIE_MSG,
+      caption: GROUP_MSG,
       contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
@@ -996,7 +995,7 @@ return await conn.sendMessage(from, {
       mimetype: "application/pdf",
       fileLength: 99999999999999,
       pageCount: 2024,
-      caption: ANIME_MSG,
+      caption: NEWS_MSG,
       contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
@@ -1043,7 +1042,7 @@ return await conn.sendMessage(from, {
       mimetype: "application/pdf",
       fileLength: 99999999999999,
       pageCount: 2024,
-      caption: NEWS_MSG,
+      caption: GROUP_MSG,
       contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
@@ -1089,7 +1088,7 @@ return await conn.sendMessage(from, {
       mimetype: "application/pdf",
       fileLength: 99999999999999,
       pageCount: 2024,
-      caption: GROUP_MSG,
+      caption: BG_MSG,
       contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
@@ -1135,7 +1134,7 @@ return await conn.sendMessage(from, {
       mimetype: "application/pdf",
       fileLength: 99999999999999,
       pageCount: 2024,
-      caption: PREMIUM_MSG,
+      caption: OWNER_MSG,
       contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
@@ -1181,7 +1180,7 @@ return await conn.sendMessage(from, {
       mimetype: "application/pdf",
       fileLength: 99999999999999,
       pageCount: 2024,
-      caption: OWNER_MSG,
+      caption: EM_MSG,
       contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
