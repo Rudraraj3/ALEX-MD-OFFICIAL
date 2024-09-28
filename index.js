@@ -30,15 +30,15 @@ const asciiArt = ` █████╗ ██╗     ███████╗█�
 const ownerNumber = ['94756857260']
 
 //===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + '/BHASHI-SESSION/creds.json')) {
+if (!fs.existsSync(__dirname + '/ALEX-SESSION/creds.json')) {
     if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
     const sessdata = config.SESSION_ID
     const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
     filer.download((err, data) => {
         if(err) throw err
-        fs.writeFile(__dirname + '/BHASHI-SESSION/creds.json', data, () => {
+        fs.writeFile(__dirname + '/ALEX-SESSION/creds.json', data, () => {
  
-            console.log("BHASHI-MD SESSION ID DOWNLOADED 🔰✅")
+            console.log("ALEX-MD V1 SESSION ID DOWNLOADED 🔰✅")
         })
     })
 }
@@ -50,8 +50,8 @@ const port = process.env.PORT || 8000;
 
 async function connectToWA() {
     console.log(asciiArt);
-    console.log("🧬 CONNECTING WA...");
-    const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/BHASHI-SESSION/')
+    console.log("👨‍💻 CONNECTING WHATSAPP...");
+    const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/ALEX-SESSION/')
     var { version } = await fetchLatestBaileysVersion()
 
     const conn = makeWASocket({
@@ -72,9 +72,9 @@ async function connectToWA() {
         } else if (connection === 'open') {
             console.log('⚜ BHASHI INSTALLING.... ')
             console.log('COMMANDS DOWNLOADED 💌')
-            console.log('BHASHI-MD CONNECTED TO WA 💥💝')
+            console.log('ALEX-MD CONNECTED TO WA 👨‍💻✨')
             const path = require('path');
-            fs.readdirSync("./BHASHI-COMMANDS/").forEach((plugin) => {
+            fs.readdirSync("./ALEX-COMMANDS/").forEach((plugin) => {
                 if (path.extname(plugin).toLowerCase() == ".js") {
                     require("./BHASHI-COMMANDS/" + plugin);
                 }
