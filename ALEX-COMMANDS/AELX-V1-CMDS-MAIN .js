@@ -278,7 +278,7 @@ cmd({
 🌐 *Official Website* 🌐
 Visit our official website for more information and resources:
 
-- *🔗 Website*: https://bhashi-md-ofc.netlify.app/
+- *🔗 Website*: https://alex-id-programmer.vercel.app/
     `;
     reply(webInfo);
 });
@@ -290,7 +290,7 @@ cmd({
     react: "📂",
     filename: __filename
 }, async (conn, mek, m, { reply }) => {
-    const repoUrl = 'https://api.github.com/repos/vishwamihiranga/BHASHI-MD-PAIR-CODE'; // Replace with your repository owner and name
+    const repoUrl = 'https://api.github.com/ALEX-ID-LK/ALEX-MD-V1'; // Replace with your repository owner and name
 
     try {
                 const senderNumber = m.sender;
@@ -2753,24 +2753,24 @@ cmd({
             
             await conn.sendMessage(from, {
       document: { url: pdfUrl }, // Path to your PDF file
-      fileName: 'A L E X  M D', // Filename for the document
+      fileName: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃', // Filename for the document
       mimetype: "application/pdf",
       fileLength: 99999999999999,
-      image: { url: 'https://i.ibb.co/5rm6dLz/image.png' },
+      image: { url: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg' },
       pageCount: 2024,
       caption: `⏰ 𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲 𝗧𝗶𝗺𝗲 : ${ping} ms`,
       contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterName: 'B H A S H I - M D​',
+          newsletterName: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃​',
           newsletterJid: "120363333519565664@newsletter",
         },
         externalAdReply: {
-          title: '© B H A S H I - M D',
+          title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
           body: ' ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★',
-          thumbnailUrl: 'https://i.ibb.co/9vTzY4m/image.png',
-          sourceUrl: 'https://bhashi-md-ofc.netlify.app/',
+          thumbnailUrl: 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg',
+          sourceUrl: 'alex-id-programmer.vercel.app/',
           mediaType: 1,
           renderLargerThumbnail: true
         }
@@ -2823,7 +2823,7 @@ cmd({
                 isForwarded: true, 
                 forwardedNewsletterMessageInfo: { 
                     newsletterJid: "120363285813931317@newsletter", 
-                    newsletterName: "𝗔 𝗟 𝗘 𝗫 - 𝗠 𝗗" 
+                    newsletterName: "𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃" 
                 } 
             }
         }, { quoted: mek });
@@ -2879,7 +2879,7 @@ cmd({
                 isForwarded: true, 
                 forwardedNewsletterMessageInfo: { 
                     newsletterJid: "120363285813931317@newsletter", 
-                    newsletterName: "​𝗔 𝗟 𝗘 𝗫 - 𝗠 𝗗" 
+                    newsletterName: "​𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃" 
                 } 
             }
         }, { quoted: mek });
@@ -3162,28 +3162,29 @@ async (conn, mek, m, { from, reply }) => {
         const freeMemory = (os.freemem() / 1024 / 1024).toFixed(2);
 
         // Status message to be sent
-        let status = `*╭─「 𝑨𝑳𝑬𝑿-𝑽1-𝑴𝑫 」*
+        let status = `*╭─「 𝐴𝐿𝐸𝑋-𝑀𝐷 」*
 *╰───────────────┈*
-*❬❬𝐴𝐿𝐸𝑋-𝑀𝐷 𝑆𝑦𝑠𝑡𝑒𝑚 𝐼𝑚𝑓𝑜❭❭*
+*⏤͟͟͞͞★❬❬ 𝑨𝑳𝑬𝑿-𝑴𝑫 𝑺𝒚𝒔𝒕𝒆𝒎 𝑰𝒏𝒇𝒐❭❭⏤͟͟͞͞★*
 *╭─────────────────┈◦•☻•◦*
-*╎⏰ 𝗨𝗽 𝗧𝗶𝗺𝗲 : ${runtime(process.uptime())}*
-*╎📟 𝗥𝗮𝗺 : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
-*╎⚙️PlatForm  : ${os.hostname()}*
-*╎👨‍💻 𝗢𝘄𝗻𝗲𝗿 : 𝐀𝙻𝗘𝙓-𝙄𝘿*
-*╚───────────────────┈◦•◦*
-*╭─「  𝑃𝑜𝑤𝑒𝑟𝑒𝑑 𝐵𝑦  」*
+*╎⏰𝑈𝑝 𝑇𝑖𝑚𝑒 : ${runtime(process.uptime())}*
+*╎📟 𝑅𝑎𝑚 : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
+*╎⚙️ 𝑃𝑙𝑎𝑡𝐹𝑜𝑟𝑚  : ${os.hostname()}*
+*╎👨‍💻 𝑂𝑤𝑛𝑒𝑟 : 𝐀𝙻𝗘𝙓-𝙄𝘿*
+*╚───────────────────♲*
+*╭─「  𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝑩𝒚 」*
 *╰────────────┈*
-> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★`;
+> *⏤͟͟͞͞★❬❬ 𝑴𝑹.𝑨𝑳𝑬𝑿-𝑰𝑫 ❭❭⏤͟͟͞͞★*
+           *⦁│𝒑𝒓𝒐𝒈𝒓𝒂𝒎𝒎𝒆𝒓│⦁*`;
 
         await conn.sendMessage(from, { 
-            image: { url: "https://i.ibb.co/9y7QQWH/image.png" },
+            image: { url: "https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg" },
             caption: status,
             contextInfo: { 
                 forwardingScore: 1, 
                 isForwarded: true, 
                 forwardedNewsletterMessageInfo: { 
                     newsletterJid: "120363333519565664@newsletter", 
-                    newsletterName: "𝗔 𝗟 𝗘 𝗫 - 𝗠𝗗​" 
+                    newsletterName: "𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃​" 
                 }
             }
         });
@@ -3643,7 +3644,7 @@ async (conn, mek, m, { from, q, reply }) => {
 📊 *Math Expression:* ${q}
 ✅ *Result:* ${result}
 
-${mono}ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛${mono}
+${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}
         `;
 
         // Send the result to the user
