@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 // URL of the premium.json file hosted on GitHub
-const premiumJsonUrl = 'https://github.com/vishwamihi/AUTO_VOICE/raw/main/premium.json';
+const premiumJsonUrl = 'https://github.com/ALEX-ID-LK/PRIMIUM-ALEX-MD/raw/main/premium.json';
 
 
 async function checkPremiumAccess(senderNumber) {
