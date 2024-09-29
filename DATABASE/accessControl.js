@@ -32,7 +32,7 @@ async function loadData() {
         blacklistedJIDs = blacklistResponse.data.jids || blacklistedJIDs;
 
         // Load premium JIDs
-        const premiumResponse = await axios.get("https://raw.githubusercontent.com/vishwamihiranga/BHASHI-PUBLIC/main/premium.json").catch(err => {
+        const premiumResponse = await axios.get("https://raw.githubusercontent.com/ALEX-ID-LK/PRIMIUM-ALEX-MD/main/premium.json").catch(err => {
             console.error("Error loading premium list:", err);
             return { data: { jids: [] } };
         });
