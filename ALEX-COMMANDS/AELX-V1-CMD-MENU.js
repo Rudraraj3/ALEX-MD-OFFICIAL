@@ -176,7 +176,7 @@ const FUN_MSG = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
 > ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★`;
 
 // NSFW Menu
-const NSFW_MSG = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
+const XXX_MSG = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
 *╰────────────┈*
 ╭══════════════◈
 ┃「  18+ 𝑀𝐸𝑁𝑈 」
@@ -461,7 +461,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode !*");
         }
         await conn.sendMessage(from, {
-            audio: { url: 'https://github.com/vishwamihiranga/BHASHI-PUBLIC/raw/main/ui%20(1).mp3' },
+            audio: { url: 'https://github.com/ALEX-ID-LK/ALEX-MD-PUBLIC/raw/main/mainaudio.mp3' },
             mimetype: 'audio/mpeg',
             ptt: true
         }, { quoted: mek });
@@ -504,8 +504,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 
 cmd({
-    pattern: "1",
-    alias: ["01"],
+    pattern: "mainmenu",
+    alias: ["1"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -550,8 +550,8 @@ reply(`${e}`)
 }
 })//=============================================================================================================================
 cmd({
-    pattern: "2",
-    alias: ["02"],
+    pattern: "downloadmenu",
+    alias: ["2"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -597,8 +597,8 @@ reply(`${e}`)
 })
 //=============================================================================================================================
 cmd({
-    pattern: "3",
-    alias: ["03"],
+    pattern: "convertermenu",
+    alias: ["3"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -644,8 +644,8 @@ reply(`${e}`)
 })
 //=============================================================================================================================
 cmd({
-    pattern: "4",
-    alias: ["04"],
+    pattern: "aimenu",
+    alias: ["4"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -691,8 +691,8 @@ reply(`${e}`)
 })
 //=============================================================================================================================
 cmd({
-    pattern: "5",
-    alias: ["05"],
+    pattern: "searchmenu",
+    alias: ["5"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -738,8 +738,8 @@ reply(`${e}`)
 })
 //=============================================================================================================================
 cmd({
-    pattern: "6",
-    alias: ["06"],
+    pattern: "funmenu",
+    alias: ["6"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -785,8 +785,8 @@ reply(`${e}`)
 })
 //=============================================================================================================================
 cmd({
-    pattern: "7",
-    alias: ["07"],
+    pattern: "18+menu",
+    alias: ["7"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -807,7 +807,7 @@ return await conn.sendMessage(from, {
       mimetype: "application/pdf",
       fileLength: 99999999999999,
       pageCount: 2024,
-      caption: NSFW_MSG,
+      caption: XXX_MSG,
       contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
@@ -833,8 +833,8 @@ reply(`${e}`)
 //=============================================================================================================================
 
 cmd({
-    pattern: "8",
-    alias: ["08"],
+    pattern: "usefulmenu",
+    alias: ["8"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -881,8 +881,8 @@ reply(`${e}`)
 //=============================================================================================================================
 
 cmd({
-    pattern: "9",
-    alias: ["09"],
+    pattern: "logomenu",
+    alias: ["9"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -928,7 +928,8 @@ reply(`${e}`)
 })
 //=============================================================================================================================
 cmd({
-    pattern: "10",
+    pattern: "groupmenu",
+    alias: ["10"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -974,7 +975,8 @@ reply(`${e}`)
 })
 
 cmd({
-    pattern: "11",
+    pattern: "newsmenu",
+    alias: ["11"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -1021,7 +1023,8 @@ reply(`${e}`)
 
 
 cmd({
-    pattern: "12",
+    pattern: "moviemenu",
+    alias: ["12"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -1042,7 +1045,7 @@ return await conn.sendMessage(from, {
       mimetype: "application/pdf",
       fileLength: 99999999999999,
       pageCount: 2024,
-      caption: GROUP_MSG,
+      caption: MV_MSG,
       contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
@@ -1067,7 +1070,8 @@ reply(`${e}`)
 })
 
 cmd({
-    pattern: "13",
+    pattern: "bugmenu",
+    alias: ["13"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -1113,7 +1117,8 @@ reply(`${e}`)
 })
 
 cmd({
-    pattern: "14",
+    pattern: "ownermenu",
+    alias: ["14"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
@@ -1159,7 +1164,8 @@ reply(`${e}`)
 })
 
 cmd({
-    pattern: "15",
+    pattern: "ehimenu",
+    alias: ["15"],
     desc: "get menu list.",
     category: "main",
     react: "🎗️",
