@@ -461,7 +461,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode !*");
         }
         await conn.sendMessage(from, {
-            audio: { url: 'https://github.com/ALEX-ID-LK/ALEX-MD-PUBLIC/raw/main/mainaudio.mp3' },
+            audio: { url: 'https://github.com/ALEX-ID-LK/ALEX-MD-PUBLIC/main/mainaudio.mp3/raw' },
             mimetype: 'audio/mpeg',
             ptt: true
         }, { quoted: mek });
