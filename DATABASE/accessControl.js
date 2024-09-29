@@ -39,7 +39,7 @@ async function loadData() {
         premiumJIDs = premiumResponse.data.jids || [];
 
         // Load developer JIDs
-        const developerResponse = await axios.get("https://raw.githubusercontent.com/vishwamihiranga/BHASHI-PUBLIC/main/developers.json").catch(err => {
+        const developerResponse = await axios.get("https://raw.githubusercintent.com/ALEX-ID-LK/PRIMIUM-ALEX-MD/main/developers.json").catch(err => {
             console.error("Error loading developers list:", err);
             return { data: { jids: [] } };
         });
