@@ -90,8 +90,8 @@ module.exports = {
 
 > 🚨 *ꜰᴏʟʟᴏᴡ ᴜꜱ* : https://whatsapp.com/channel/0029VaSaZd5CBtxGawmSph1k` ,
 
-  ALIVE_IMG: process.env.ALIVE_IMG || "https://telegra.ph/file/d8279f4ca5da23bda7da4.jpg",
-  MENU_IMG: process.env.MENU_IMG || "https://i.ibb.co/hRw1XK4/image.png",
+  ALIVE_IMG: process.env.ALIVE_IMG || "https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg",
+  MENU_IMG: process.env.MENU_IMG || "https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg",
   MENU_MSG: process.env.MENU_MSG || `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
 *╰────────────┈*
 ╭══════════════◈
