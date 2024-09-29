@@ -25,7 +25,7 @@ async function loadData() {
         }
 
         // Load blacklist from remote URL if local file doesn't exist
-        const blacklistResponse = await axios.get("https://raw.githubusercontent.com/vishwamihiranga/BHASHI-PUBLIC/main/blacklist.json").catch(err => {
+        const blacklistResponse = await axios.get("https://raw.githubusercontent.com/ALEX-ID-LK/PRIMIUM-ALEX-MD/main/blacklist.json").catch(err => {
             console.error("Error loading blacklist from remote URL:", err);
             return { data: { jids: [] } };
         });
