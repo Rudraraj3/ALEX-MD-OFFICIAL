@@ -444,6 +444,8 @@ const EM_MSG = `*╭─ 「  𝐴𝐿𝐸𝑋-𝑀𝐷 」*
 
 > ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★`;
 //=============================================================================================================================
+const axios = require('axios'); // Add this if axios is used in your project
+
 cmd({
     pattern: "menu",
     desc: "get menu list.",
@@ -456,20 +458,30 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const senderNumber = m.sender;
         const isGroup = m.isGroup || false;
 
-        // Check if the sender has access (implement your checkAccess function accordingly)
+        // Check if the sender has access
         if (!checkAccess(senderNumber, isGroup)) {
             return reply("*😢 Access denied. You don't have permission to use this command.🎁 Change Bot Mode !*");
         }
+
+        // Send audio
         await conn.sendMessage(from, {
             audio: { url: 'https://github.com/ALEX-ID-LK/PRIMIUM-ALEX-MD/raw/main/ui%20(1).mp3' },
             mimetype: 'audio/mpeg',
             ptt: true
         }, { quoted: mek });
-        // Use a direct image URL instead of Base64
-        const thumbnailUrl = 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg'; // Direct URL to your image
 
+        // Direct image URL
+        const thumbnailUrl = 'https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg'; 
+
+        try {
+            await axios.get(pdfUrl); // Verify the document is reachable
+        } catch (err) {
+            return reply('Error: The document could not be retrieved. Please check the URL.');
+        }
+
+        // Send document with caption
         return await conn.sendMessage(from, {
-            document: { url: pdfUrl }, // Path to your PDF file
+            document: { url: pdfUrl }, // URL to your PDF file
             fileName: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃', // Filename for the document
             mimetype: "application/pdf",
             fileLength: 99999999999999,
@@ -478,14 +490,10 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             contextInfo: {
                 forwardingScore: 999,
                 isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterName: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
-                    newsletterJid: "120363285813931317@newsletter",
-                },
                 externalAdReply: {
                     title: '𝐀  𝐋  𝐄  𝐗  -  𝐌  𝐃',
                     body: '> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★​',
-                    thumbnailUrl: thumbnailUrl, // Use the URL directly here
+                    thumbnailUrl: thumbnailUrl,
                     sourceUrl: 'https://alex-id-programmer.vercel.app/',
                     mediaType: 1,
                     renderLargerThumbnail: true
@@ -493,11 +501,10 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             }
         });
     } catch (e) {
-        console.log(e);
-        reply(`${e}`);
+        console.error(e); // Log the error for debugging
+        reply(`Error: ${e.message}`); // Send error response to user
     }
 });
-
 
 //=============================================================================================================================
 
