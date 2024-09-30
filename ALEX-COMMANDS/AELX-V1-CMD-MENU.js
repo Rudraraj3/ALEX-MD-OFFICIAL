@@ -1,6 +1,6 @@
 const config = require('../config');
 const { cmd, commands } = require('../command');
-const checkAccess = require('../DATABASE/accessControl'); 
+const { checkAccess, isPremiumUser, blacklistedJIDs, premiumJIDs, dataLoaded } = require('../DATABASE/accessControl');
 const pdfUrl = "https://telegra.ph/file/aa2b0c3227ae3ec2001b3.jpg";
 const axios = require('axios');
 const fs = require('fs').promises; // Use fs.promises for async file operations
