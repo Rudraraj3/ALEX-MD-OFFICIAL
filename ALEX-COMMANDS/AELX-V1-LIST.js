@@ -1,6 +1,6 @@
 const { cmd } = require('../command');
 const config = require('../config'); 
-const checkAccess = require('../DATABASE/accessControl');
+const { checkAccess, isPremiumUser, blacklistedJIDs, premiumJIDs, dataLoaded } = require('../DATABASE/accessControl');
 const commands ={
   "binance": {
     "category": "Useful",
