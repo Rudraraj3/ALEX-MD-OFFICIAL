@@ -464,7 +464,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         // Send audio
         await conn.sendMessage(from, {
-            audio: { url: 'https://github.com/ALEX-ID-LK/PRIMIUM-ALEX-MD/raw/main/ui%20(1).mp3' },
+            audio: { url: 'https://github.com/vishwamihiranga/BHASHI-PUBLIC/raw/main/ui%20(1).mp3' },
             mimetype: 'audio/mpeg',
             ptt: true
         }, { quoted: mek });
