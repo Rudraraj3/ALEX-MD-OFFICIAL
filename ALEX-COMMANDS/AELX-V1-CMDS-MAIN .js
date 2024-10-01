@@ -2857,7 +2857,7 @@ cmd({
         let downloadUrl = down.dl_url;
         // Sending audio file + document message
         await conn.sendMessage(from, { audio: { url: downloadUrl }, mimetype: "audio/mpeg" }, { quoted: mek });
-        await conn.sendMessage(from, { document: { url: downloadUrl }, mimetype: "audio/mpeg", caption:"ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛", fileName: `BHASHI-${data.title}.mp3` }, { quoted: mek });
+        await conn.sendMessage(from, { document: { url: downloadUrl }, mimetype: "audio/mpeg", caption:"> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★", fileName: `𝐴𝐿𝐸𝑋-${data.title}.mp3` }, { quoted: mek });
     } catch (e) {
         console.log(e);
         reply(`An error occurred: ${e.message}`);
@@ -2913,7 +2913,7 @@ cmd({
         let downloadUrl = down.dl_url;
         // Sending video file + document message
         await conn.sendMessage(from, { video: { url: downloadUrl }, mimetype: "video/mp4" }, { quoted: mek });
-        await conn.sendMessage(from, { document: { url: downloadUrl }, mimetype: "video/mp4", caption:"ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛", fileName: `BHASHI-${data.title}.mp4` }, { quoted: mek });
+        await conn.sendMessage(from, { document: { url: downloadUrl }, mimetype: "video/mp4", caption:"> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★", fileName: `𝐴𝐿𝐸𝑋-${data.title}.mp4` }, { quoted: mek });
     } catch (e) {
         console.log(e);
         reply(`An error occurred: ${e.message}`);
@@ -3530,7 +3530,7 @@ cmd({
 
         // Send the JID response
         await conn.sendMessage(from, { 
-            text: `📍 Chat JID: ${chatJid}`,
+            text: `🎗️ 𝐶𝐻𝐴𝑇 𝐽𝐼𝐷 : ${chatJid}`,
             footer: '${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}'
         });
 
@@ -3631,7 +3631,7 @@ cmd({
       // Send the user information response
       await conn.sendMessage(from, { 
           text: userInfo,
-          footer: '${mono}ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛${mono}'
+          footer: '${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}'
       });
 
   } catch (e) {
@@ -3736,7 +3736,7 @@ cmd({
         for (let i = 0; i < 5; i++) {
             const response = await axios.get(url);
             const imageUrl = response.data.url;
-            const caption = `Trap Waifu Image #${i + 1} 🔥\n\n${mono}ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛${mono}`;
+            const caption = `Trap Waifu Image #${i + 1} 🔥\n\n${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}`;
             await conn.sendMessage(from, { image: { url: imageUrl }, caption }, { quoted: mek });
         }
     } catch (error) {
@@ -3763,7 +3763,7 @@ cmd({
         for (let i = 0; i < 5; i++) {
             const response = await axios.get(url);
             const imageUrl = response.data.url;
-            const caption = `Neko Waifu Image #${i + 1} 🐾\n\n${mono}ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛${mono}`;
+            const caption = `Neko Waifu Image #${i + 1} 🐾\n\n${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}`;
             await conn.sendMessage(from, { image: { url: imageUrl }, caption }, { quoted: mek });
         }
     } catch (error) {
@@ -3790,7 +3790,7 @@ cmd({
         for (let i = 0; i < 5; i++) {
             const response = await axios.get(url);
             const imageUrl = response.data.url;
-            const caption = `Blowjob Waifu Image #${i + 1} 🍑\n\n${mono}ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛${mono}`;
+            const caption = `Blowjob Waifu Image #${i + 1} 🍑\n\n${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}`;
             await conn.sendMessage(from, { image: { url: imageUrl }, caption }, { quoted: mek });
         }
     } catch (error) {
@@ -3818,7 +3818,7 @@ cmd({
 
         await conn.sendMessage(from, {
             video: { url: videos[i].video_1 },
-            caption: `*🎥Title:* ${videos[i].title}\n*> 🎥Category:* ${videos[i].category} 🎥\n\n${mono}ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛${mono}`
+            caption: `*🎥Title:* ${videos[i].title}\n*> 🎥Category:* ${videos[i].category} 🎥\n\n${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}`
         }, { quoted: mek });
     } catch (error) {
         reply('🚫 An error occurred while retrieving the video: ' + error.message);
@@ -4099,7 +4099,7 @@ cmd({
         const mysteryItem = mysteryItems[randomIndex];
 
         // Send the mystery item as a surprise
-        await conn.sendMessage(from, { text: `🎉 *Congratulations!* You've received: ${mysteryItem}\n\n${mono}ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛${mono}` }, { quoted: m });
+        await conn.sendMessage(from, { text: `🎉 *Congratulations!* You've received: ${mysteryItem}\n\n${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}` }, { quoted: m });
 
         console.log('Mystery box opened successfully');
     } catch (e) {
@@ -4201,7 +4201,7 @@ async (conn, mek, m, { from, q, args, reply }) => {
         // Send GIFs one by one
         for (let i = 0; i < data.hits.length; i++) {
             const hit = data.hits[i];
-            const caption = `*${i + 1}.* ${hit.tags}\n👤 *User:* ${hit.user}\n👁️ *Views:* ${hit.views}\n❤️ *Likes:* ${hit.likes}\n🖼️ *Size:* ${gifSize}\n\n${mono}ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛${mono}`;
+            const caption = `*${i + 1}.* ${hit.tags}\n👤 *User:* ${hit.user}\n👁️ *Views:* ${hit.views}\n❤️ *Likes:* ${hit.likes}\n🖼️ *Size:* ${gifSize}\n\n${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}`;
 
             await conn.sendMessage(from, { 
                 video: { url: hit.videos[gifSize].url },
@@ -4342,7 +4342,7 @@ cmd({
         const { extract, title } = response.data;
 
         // Construct response text
-        const responseText = `*${title}*\n\n${extract}\n\n${mono}ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛${mono}`;
+        const responseText = `*${title}*\n\n${extract}\n\n${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}`;
 
         // Send the response
         await conn.sendMessage(from, { text: responseText }, { quoted: mek });
@@ -5071,7 +5071,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             '*🔧 Finalizing operations...* 🏁',
             '⚠️ *Note:* All actions are for demonstration purposes only.',
             '⚠️ *Reminder:* Ethical hacking is the only way to ensure security.',
-            '> *BHASHI-MD-HACKING-COMPLETE ☣*'
+            '> *ALEX-MD-HACKING-COMPLETE ☣*'
         ];
 
         for (const line of steps) {
@@ -5214,7 +5214,7 @@ async(conn, mek, m, {from, quoted, body, isCmd, command, args, q, isGroup, sende
             });
 
             const newsItem = response.data.articles[0];
-            message = `📰 Breaking Tech News 🚨\n\n🔥 ${newsItem.title}\n\n📝 ${newsItem.description}\n\n🔗 Read more: ${newsItem.url}\n\n\n${mono}ʙʜᴀꜱʜɪ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ-ᴡᴀ-ʙᴏᴛ ㋛${mono}`;
+            message = `📰 Breaking Tech News 🚨\n\n🔥 ${newsItem.title}\n\n📝 ${newsItem.description}\n\n🔗 Read more: ${newsItem.url}\n\n\n${mono}> ⏤͟͟͞͞★❬❬ 𝐴𝑙𝑒𝑥-𝑀𝑑 𝑊𝒉𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡 ❭❭⏤͟͟͞͞★${mono}`;
 
             // Use news image if available, otherwise keep ALIVE_IMG
             if (newsItem.urlToImage) {
@@ -5415,10 +5415,10 @@ cmd({
         const senderNumber = m.sender;
         const isGroup = m.isGroup || false;
         // Define the vCard contact with the updated details
-        let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;VISHWA;;;\nFN:VISHWA\nORG:VISHWA OFC\nTITLE:\nitem1.TEL;waid=94702481115:94702481115\nitem1.X-ABLabel:VISHWA OFC\nX-WA-BIZ-DESCRIPTION:BHASHI-MD BY VISHWA\nX-WA-BIZ-NAME:VISHWA OFC\nEND:VCARD`;
+        let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;MR ALEX-ID;;;\nFN:MR ALEX-ID\nORG:ALEX OFC\nTITLE:\nitem1.TEL;waid=94756857260:94756857260\nitem1.X-ABLabel:ALEX OFC\nX-WA-BIZ-DESCRIPTION:ALEX-MD BY MR ALEX-ID\nX-WA-BIZ-NAME:ALEX OFC\nEND:VCARD`;
 
         // Send the contact message
-        await conn.sendMessage(from, { contacts: { displayName: 'VISHWA OFC', contacts: [{ vcard }] }}, { quoted: mek });
+        await conn.sendMessage(from, { contacts: { displayName: 'ALEX OFC', contacts: [{ vcard }] }}, { quoted: mek });
     } catch (e) {
         console.error(e);
         await conn.sendMessage(from, { text: `Error: ${e.message}` }, { quoted: mek });
