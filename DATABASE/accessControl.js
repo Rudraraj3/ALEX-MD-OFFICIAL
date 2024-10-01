@@ -25,21 +25,21 @@ async function loadData() {
         }
 
         // Load blacklist from remote URL if local file doesn't exist
-        const blacklistResponse = await axios.get("https://raw.githubusercontent.com/vishwamihiranga/BHASHI-PUBLIC/main/blacklist.json").catch(err => {
+        const blacklistResponse = await axios.get("https://raw.githubusercontent.com/ALEX-ID-LK/PRIMIUM-ALEX-MD/blob/main/blacklist.json").catch(err => {
             console.error("Error loading blacklist from remote URL:", err);
             return { data: { jids: [] } };
         });
         blacklistedJIDs = blacklistResponse.data.jids || blacklistedJIDs;
 
         // Load premium JIDs
-        const premiumResponse = await axios.get("https://raw.githubusercontent.com/vishwamihiranga/BHASHI-PUBLIC/main/premium.json").catch(err => {
+        const premiumResponse = await axios.get("https://raw.githubusercontent.com/ALEX-ID-LK/PRIMIUM-ALEX-MD/blob/main/premium.json").catch(err => {
             console.error("Error loading premium list:", err);
             return { data: { jids: [] } };
         });
         premiumJIDs = premiumResponse.data.jids || [];
 
         // Load developer JIDs
-        const developerResponse = await axios.get("https://raw.githubusercontent.com/vishwamihiranga/BHASHI-PUBLIC/main/developers.json").catch(err => {
+        const developerResponse = await axios.get("https://raw.githubusercontent.com/ALEX-ID-LK/PRIMIUM-ALEX-MD/blob/main/developers.json").catch(err => {
             console.error("Error loading developers list:", err);
             return { data: { jids: [] } };
         });
