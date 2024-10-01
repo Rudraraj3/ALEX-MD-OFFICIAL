@@ -1,6 +1,6 @@
 const { cmd } = require('../command');
 const config = require('../config'); 
-const { isPremiumUser, blacklistedJIDs, premiumJIDs, dataLoaded } = require('../ALEX-COMMANDS/AELX-V1-LIST');
+const { isPremiumUser, blacklistedJIDs, premiumJIDs, dataLoaded } = require('../DATABASE/acessControl');
 const commands ={
   "binance": {
     "category": "Useful",
